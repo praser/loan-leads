@@ -1,0 +1,15 @@
+{
+  "name": "financiamento-bancario",
+  "version": "1.0.0",
+  "description": "A platform to collect and sell leads interested to take out financing for the aquisition of real state.",
+  "main": "index.js",
+  "repository": "https://github.com/praser/financiamento-bancario",
+  "author": "Rubens Praser Júnior",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
