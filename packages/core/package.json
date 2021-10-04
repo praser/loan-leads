@@ -1,0 +1,13 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "Core logic for leads management",
+  "main": "index.js",
+  "repository": "https://github.com/praser/financiamento-bancario",
+  "author": "Rubens Praser Júnior",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}
