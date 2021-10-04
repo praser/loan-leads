@@ -2,7 +2,11 @@
   "name": "@financiamento-bancario/core",
   "version": "1.0.0",
   "description": "Core logic for leads management",
-  "main": "src/index.ts",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/praser/financiamento-bancario",
   "author": "Rubens Praser Júnior",
   "license": "MIT",
@@ -18,6 +22,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.4.1",
-    "tslint": "^6.1.3"
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.3"
   }
 }
