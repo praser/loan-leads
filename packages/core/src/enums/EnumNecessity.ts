@@ -1,5 +1,5 @@
 export enum EnumNecessity {
-  BuyNewProperty = 'BUY NEW PROPERTY',
-  BuyUsedProperty = 'BUY USED PROPERTY',
-  BuyLand = 'BUY LAND',
+  BuyNewProperty = 1,
+  BuyUsedProperty,
+  BuyLand,
 }
