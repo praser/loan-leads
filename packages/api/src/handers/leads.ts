@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import { ILead } from "@financiamento-bancario/core"
 import { publish } from "../clients/mq"
 
-const queue = "lead"
+const queue = "leads"
 
 export const create = async (req: Request, res: Response) => {
   const lead: ILead = { id: uuidv4() }

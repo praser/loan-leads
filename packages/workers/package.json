@@ -1,0 +1,33 @@
+{
+  "name": "@financiamento-bancario/workers",
+  "version": "1.0.0",
+  "description": "Workers to consume messages in a message queue",
+  "main": "dist/index.js",
+  "repository": "https://github.com/praser/financiamento-bancario",
+  "author": "Rubens Praser Júnior",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "tslint 'src/**/*.ts'"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/dotenv-safe": "^8.1.2",
+    "@types/node": "^16.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "@financiamento-bancario/core": "1.0.0",
+    "amqplib": "^0.8.0",
+    "dotenv-safe": "^8.2.0"
+  }
+}
