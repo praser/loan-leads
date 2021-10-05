@@ -2,8 +2,8 @@
   "name": "@financiamento-bancario/core",
   "version": "1.0.0",
   "description": "Core logic for leads management",
-  "main": "dist/index",
-  "types": "dist/index",
+  "main": "dist/src/index",
+  "types": "dist/src/index",
   "files": [
     "dist"
   ],

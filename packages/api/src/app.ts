@@ -1,6 +1,8 @@
 import express, { Request, Response, NextFunction, response } from "express"
 import { v4 as uuidv4 } from "uuid"
 
+import { ILead } from "@financiamento-bancario/core"
+
 const app = express()
 app.use(express.json())
 const port = 3000
@@ -10,7 +12,7 @@ const leadQueue = "leads"
 const addToQueue = (queue: string, message: any) => console.log(queue, message)
 
 app.post("/leads", (req: Request, res: Response, next: NextFunction) => {
-  const lead = {
+  const lead: ILead = {
     id: uuidv4(),
   }
   addToQueue(leadQueue, lead)
@@ -19,7 +21,7 @@ app.post("/leads", (req: Request, res: Response, next: NextFunction) => {
 
 app.put("/leads/:id", (req: Request, res: Response, next: NextFunction) => {
   const { id } = req.params
-  const lead = { id, ...req.body }
+  const lead: ILead = { id, ...req.body }
   addToQueue(leadQueue, lead)
   res.status(200).json(lead)
 })

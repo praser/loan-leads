@@ -1,3 +1,2 @@
-import Lead from './entities'
-
-export default Lead
+export { ILead } from './entities/ILead'
+export { EnumNecessity } from './enums/EnumNecessity'
