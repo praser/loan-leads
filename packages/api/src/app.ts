@@ -1,3 +1,6 @@
+import dotenv from "dotenv-safe"
+dotenv.config()
+
 import express from "express"
 import leadsRouter from "./routers/leads"
 
