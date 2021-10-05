@@ -2,7 +2,7 @@
   "name": "@financiamento-bancario/api",
   "version": "1.0.0",
   "description": "Rest API to handle leads",
-  "main": "src/app.ts",
+  "main": "dist/index",
   "repository": "https://github.com/praser/financiamento-bancario",
   "author": "Rubens Praser Júnior",
   "license": "MIT",
