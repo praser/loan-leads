@@ -13,8 +13,19 @@
    "private": false,
    "scripts": {
       "lint": "tslint 'src/**/*.ts'",
-      "start": "ts-node src/index.ts",
-      "typeorm": "ts-node ../../node_modules/typeorm/cli.js"
+      "orm:schema:sync": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm schema:sync",
+      "orm:schema:log": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm schema:log",
+      "orm:schema:drop": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm schema:drop",
+      "orm:query": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm query $1",
+      "orm:entity:create": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm entity:create",
+      "orm:subscriber:create": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm subscriber:create",
+      "orm:migration:create": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm migration:create",
+      "orm:migration:generate": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm migration:generate",
+      "orm:migration:run": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm migration:run",
+      "orm:migration:status": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm migration:show",
+      "orm:migration:revert": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm migration:revert",
+      "orm:cache:clear": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm cache:clear"
+      
    },
    "devDependencies": {
       "@types/dotenv-safe": "^8.1.2",
