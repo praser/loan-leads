@@ -2,7 +2,8 @@
   "references": [
     { "path": "./packages/core" },
     { "path": "./packages/api" },
-    { "path": "./packages/workers" }
+    { "path": "./packages/workers" },
+    { "path": "./packages/database" }
   ],
   "files": [],
   "include": [],

@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint": "tslint 'src/**/*.ts'"
+    "lint": "tslint 'src/**/*.ts'",
+    "worker:leads": "ts-node src/leads"
   },
   "devDependencies": {
     "@types/amqplib": "^0.8.2",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "@financiamento-bancario/core": "1.0.0",
+    "@financiamento-bancario/database": "1.0.0",
     "amqplib": "^0.8.0",
     "dotenv-safe": "^8.2.0"
   }
