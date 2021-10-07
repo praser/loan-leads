@@ -1,5 +1,5 @@
 {
-   "name": "@financiamento-bancario/database",
+   "name": "@loan-leads/database",
    "version": "1.0.0",
    "description": "Persistence layer for leads management",
    "main": "dist/src/index",
@@ -7,7 +7,7 @@
    "files": [
       "dist"
    ],
-   "repository": "https://github.com/praser/financiamento-bancario",
+   "repository": "https://github.com/praser/loan-leads",
    "author": "Rubens Praser Júnior",
    "license": "MIT",
    "private": false,
@@ -43,7 +43,7 @@
       "typescript": "3.3.3333"
    },
    "dependencies": {
-      "@financiamento-bancario/core": "1.0.0",
+      "@loan-leads/core": "1.0.0",
       "dotenv-safe": "^8.2.0",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.10",

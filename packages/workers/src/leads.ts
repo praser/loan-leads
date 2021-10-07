@@ -2,8 +2,8 @@ import dotenv from 'dotenv-safe'
 dotenv.config()
 
 import { consume } from './clients/mq'
-import { ILead } from '@financiamento-bancario/core'
-import { createConnection, getConfig, getConnection, Lead } from '@financiamento-bancario/database'
+import { ILead } from '@loan-leads/core'
+import { createConnection, getConfig, getConnection, Lead } from '@loan-leads/database'
 
 const queue = 'leads'
 const config = getConfig(process.env)

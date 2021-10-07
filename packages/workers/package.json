@@ -1,9 +1,9 @@
 {
-  "name": "@financiamento-bancario/workers",
+  "name": "@loan-leads/workers",
   "version": "1.0.0",
   "description": "Workers to consume messages in a message queue",
   "main": "dist/index.js",
-  "repository": "https://github.com/praser/financiamento-bancario",
+  "repository": "https://github.com/praser/loan-leads",
   "author": "Rubens Praser Júnior",
   "license": "MIT",
   "private": false,
@@ -27,8 +27,8 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
-    "@financiamento-bancario/core": "1.0.0",
-    "@financiamento-bancario/database": "1.0.0",
+    "@loan-leads/core": "1.0.0",
+    "@loan-leads/database": "1.0.0",
     "amqplib": "^0.8.0",
     "dotenv-safe": "^8.2.0"
   }

@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm'
-import { EnumNecessity, ILead } from '@financiamento-bancario/core'
+import { EnumNecessity, ILead } from '@loan-leads/core'
 
 @Entity()
 export class Lead implements ILead {

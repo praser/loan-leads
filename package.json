@@ -3,9 +3,9 @@
   "description": "A platform to collect and sell leads interested to take out financing for the aquisition of real state.",
   "license": "MIT",
   "main": "index.js",
-  "name": "financiamento-bancario",
+  "name": "loan-leads",
   "private": true,
-  "repository": "https://github.com/praser/financiamento-bancario",
+  "repository": "https://github.com/praser/loan-leads",
   "scripts": {
     "build": "tsc --build tsconfig.json"
   },
