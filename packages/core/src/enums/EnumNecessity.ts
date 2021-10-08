@@ -3,3 +3,5 @@ export enum EnumNecessity {
   BuyUsedProperty,
   BuyLand,
 }
+
+export default EnumNecessity
