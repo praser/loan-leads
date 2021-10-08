@@ -12,6 +12,7 @@
    "license": "MIT",
    "private": false,
    "scripts": {
+      "build": "tsc --build tsconfig.json",
       "lint": "eslint 'src/**/*.ts'",
       "orm:schema:sync": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm schema:sync",
       "orm:schema:log": "tsc --build tsconfig.json && cp .env ./dist/.env && cd dist && npx typeorm schema:log",

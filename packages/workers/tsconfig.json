@@ -99,6 +99,7 @@
   },
   "references": [
     { "path": "../core" },
-    { "path": "../database" }
+    { "path": "../database" },
+    { "path": "../utils" }
   ]
 }

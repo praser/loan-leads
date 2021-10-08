@@ -8,8 +8,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "tsc --build tsconfig.json",
     "lint": "eslint 'src/**/*.ts'",
-    "worker:leads:create": "nodemon src/workers/leads.ts"
+    "worker:start:leads": "nodemon src/workers/leads/index.ts"
   },
   "devDependencies": {
     "@types/amqplib": "^0.8.2",
@@ -30,7 +31,7 @@
   "dependencies": {
     "@loan-leads/core": "1.0.0",
     "@loan-leads/database": "1.0.0",
-    "amqplib": "^0.8.0",
+    "@loan-leads/utils": "1.0.0",
     "dotenv-safe": "^8.2.0"
   }
 }

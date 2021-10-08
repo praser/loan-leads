@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "build": "tsc --build tsconfig.json",
     "lint": "eslint 'src/**/*.ts'",
     "dev": "nodemon src/app.ts"
   },

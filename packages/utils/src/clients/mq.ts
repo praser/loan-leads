@@ -3,17 +3,19 @@ import { EnumMQActions, IMQMessage, IConsumer } from '@loan-leads/core'
 
 const connect = amqplib.connect(process.env.AMQP_URL || '')
 
-const parseMessage = <T>(message: ConsumeMessage | null): IMQMessage<T> => {
+export { EnumMQActions, IMQMessage, IConsumer }
+
+export const parseMessage = <T>(message: ConsumeMessage | null): IMQMessage<T> => {
   if (!message) throw new Error('Invalid message')
   return JSON.parse(message.content.toString())
 }
 
-const destroyMessage = (message: ConsumeMessage | null, channel: Channel): void => {
+export const destroyMessage = (message: ConsumeMessage | null, channel: Channel): void => {
   if (!message) throw new Error('Invalid message')
   channel.ack(message)
 }
 
-const consume = async <T>(queue: string, consumer: IConsumer): Promise<void> => {
+export const consume = async <T>(queue: string, consumer: IConsumer<T>): Promise<void> => {
   const conn = await connect
   const channel = await conn.createChannel()
   await channel.assertQueue(queue)
@@ -24,7 +26,7 @@ const consume = async <T>(queue: string, consumer: IConsumer): Promise<void> => 
   })
 }
 
-const publish = async <T>(queue: string, message: IMQMessage<T>): Promise<boolean> => {
+export const publish = async <T>(queue: string, message: IMQMessage<T>): Promise<boolean> => {
   try {
     const conn = await connect
     const channel = await conn.createChannel()
@@ -36,5 +38,3 @@ const publish = async <T>(queue: string, message: IMQMessage<T>): Promise<boolea
     return false
   }
 }
-
-export { consume, EnumMQActions, IConsumer, IMQMessage, publish }

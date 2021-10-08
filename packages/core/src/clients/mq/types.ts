@@ -5,9 +5,9 @@ export enum EnumMQActions {
 
 export interface IMQMessage<T> {
   action: EnumMQActions
-  message: T
+  content: T
 }
 
-export interface IConsumer {
-  consume: <T>(message: IMQMessage<T>) => void
+export interface IConsumer<T> {
+  consume: (message: IMQMessage<T>) => void
 }
