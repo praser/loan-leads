@@ -1,6 +1,7 @@
 import amqplib from 'amqplib'
 
 const open = amqplib.connect(process.env.AMQP_URL || '')
+console.log('process.env.AMQP_URL:', process.env.AMQP_URL)
 
 export enum EnumMQActions {
   'CREATE',

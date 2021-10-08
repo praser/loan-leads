@@ -1,9 +1,7 @@
-import dotenv from 'dotenv-safe'
+import './config'
 
 import express from 'express'
 import leadsRouter from './routers/leads'
-
-dotenv.config()
 
 const app = express()
 const port = 3000

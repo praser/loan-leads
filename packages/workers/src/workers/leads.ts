@@ -3,7 +3,7 @@ import dotenv from 'dotenv-safe'
 import { ILead } from '@loan-leads/core'
 import { createConnection, getConfig, getConnection, Lead } from '@loan-leads/database'
 import { ConsumeMessage } from 'amqplib'
-import { consume } from './clients/mq'
+import { consume, EnumMQActions, IMQMessage } from '../clients/mq'
 
 dotenv.config()
 
@@ -17,7 +17,7 @@ const errorHander = (lead: ILead, err: unknown) => {
   console.error(err)
 }
 
-const createLead = async (params: ILead) => {
+const create = async (params: ILead) => {
   const lead = new Lead()
   lead.id = params.id
   const conn = getConnection()
@@ -30,12 +30,19 @@ const createLead = async (params: ILead) => {
   }
 }
 
-const consumer = async (message: ConsumeMessage) => {
-  const params: ILead = JSON.parse(message.content.toString())
-  createLead(params)
+const consumer = async (consumeMessage: ConsumeMessage) => {
+  const message: IMQMessage<ILead> = JSON.parse(consumeMessage.content.toString())
+  switch (message.action) {
+    case EnumMQActions.CREATE:
+      create(message.message)
+      break
+    default:
+      break
+  }
 }
 
 ;(async () => {
   await createConnection(config)
   consume(queue, consumer)
+  console.log(`Leads worker is up and listening to ${queue} queue.`)
 })()
