@@ -2,6 +2,7 @@ import { MigrationInterface, QueryRunner, Table, TableIndex } from 'typeorm'
 
 export class createLead1633474551872 implements MigrationInterface {
   name = 'createLead1633474551872'
+
   table = 'lead'
 
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -37,3 +38,5 @@ export class createLead1633474551872 implements MigrationInterface {
     await queryRunner.dropTable(this.table)
   }
 }
+
+export default createLead1633474551872

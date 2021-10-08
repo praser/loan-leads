@@ -14,3 +14,5 @@ export class Lead implements ILead {
 
   necessity?: EnumNecessity
 }
+
+export default Lead
