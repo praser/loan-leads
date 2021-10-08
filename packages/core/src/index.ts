@@ -1,2 +1,3 @@
-export { ILead } from './entities/ILead'
-export { EnumNecessity } from './enums/EnumNecessity'
+export * from './clients'
+export * from './entities'
+export * from './enums'

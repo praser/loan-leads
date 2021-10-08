@@ -1,4 +1,4 @@
-import { EnumNecessity } from '../enums/EnumNecessity'
+import { EnumNecessity } from './enums'
 
 export interface ILead {
   age?: number
