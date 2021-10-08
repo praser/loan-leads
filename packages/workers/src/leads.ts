@@ -1,9 +1,11 @@
 import dotenv from 'dotenv-safe'
-dotenv.config()
 
-import { consume } from './clients/mq'
 import { ILead } from '@loan-leads/core'
 import { createConnection, getConfig, getConnection, Lead } from '@loan-leads/database'
+import { ConsumeMessage } from 'amqplib'
+import { consume } from './clients/mq'
+
+dotenv.config()
 
 const queue = 'leads'
 const config = getConfig(process.env)
@@ -28,7 +30,7 @@ const createLead = async (params: ILead) => {
   }
 }
 
-const consumer = async (message: any) => {
+const consumer = async (message: ConsumeMessage) => {
   const params: ILead = JSON.parse(message.content.toString())
   createLead(params)
 }

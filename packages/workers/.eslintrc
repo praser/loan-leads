@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb/base",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/indent": [
+      "error",
+      2
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/extensions": "off",
+    "no-console": "off",
+    "no-shadow": "off",
+    "no-unresolved": "off",
+    "no-unused-expressions": "off",
+    "prettier/prettier": "error"
+  }
+}
