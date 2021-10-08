@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import { ILead } from '@loan-leads/core'
-import { EnumMQActions, IMQMessage, publish } from '../clients/mq'
+import { EnumMQActions, IMQMessage, publish } from '@loan-leads/utils'
 
 const queue = 'leads'
 
@@ -9,7 +9,7 @@ export const create = async (req: Request, res: Response): Promise<void> => {
   const lead: ILead = { id: uuidv4() }
   const message: IMQMessage<ILead> = {
     action: EnumMQActions.CREATE,
-    message: lead,
+    content: lead,
   }
 
   ;(await publish(queue, message))
@@ -22,7 +22,7 @@ export const update = async (req: Request, res: Response): Promise<void> => {
   const lead: ILead = { id, ...req.body }
   const message: IMQMessage<ILead> = {
     action: EnumMQActions.UPDATE,
-    message: lead,
+    content: lead,
   }
 
   ;(await publish(queue, message))
