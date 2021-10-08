@@ -1,19 +1,31 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import { ILead } from '@loan-leads/core'
-import { publish } from '../clients/mq'
+import { EnumMQActions, IMQMessage, publish } from '../clients/mq'
 
 const queue = 'leads'
 
-export const create = async (req: Request, res: Response) => {
+export const create = async (req: Request, res: Response): Promise<void> => {
   const lead: ILead = { id: uuidv4() }
-  ;(await publish(queue, lead))
+  const message: IMQMessage<ILead> = {
+    action: EnumMQActions.CREATE,
+    message: lead,
+  }
+
+  ;(await publish(queue, message))
     ? res.status(201).json(lead)
     : res.status(500).json({ message: 'Error on lead creation' })
 }
 
-export const update = async (req: Request, res: Response) => {
+export const update = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   const lead: ILead = { id, ...req.body }
-  ;(await publish(queue, lead)) ? res.status(200).json(lead) : res.status(500).json({ message: 'Error on lead update' })
+  const message: IMQMessage<ILead> = {
+    action: EnumMQActions.UPDATE,
+    message: lead,
+  }
+
+  ;(await publish(queue, message))
+    ? res.status(200).json(lead)
+    : res.status(500).json({ message: 'Error on lead update' })
 }

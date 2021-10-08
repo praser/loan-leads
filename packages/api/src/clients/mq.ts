@@ -1,11 +1,18 @@
-import amqplib from "amqplib"
+import amqplib from 'amqplib'
 
-const open = amqplib.connect(process.env.AMQP_URL || "")
+const open = amqplib.connect(process.env.AMQP_URL || '')
 
-export const publish = async (
-  queue: string,
-  message: any
-): Promise<boolean> => {
+export enum EnumMQActions {
+  'CREATE',
+  'UPDATE',
+}
+
+export interface IMQMessage<T> {
+  action: EnumMQActions
+  message: T
+}
+
+export const publish = async <T>(queue: string, message: IMQMessage<T>): Promise<boolean> => {
   try {
     const conn = await open
     const channel = await conn.createChannel()
@@ -17,3 +24,5 @@ export const publish = async (
     return false
   }
 }
+
+export default publish
