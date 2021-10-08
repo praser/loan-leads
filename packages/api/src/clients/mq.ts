@@ -12,7 +12,10 @@ export interface IMQMessage<T> {
   message: T
 }
 
-export const publish = async <T>(queue: string, message: IMQMessage<T>): Promise<boolean> => {
+export const publish = async <T>(
+  queue: string,
+  message: IMQMessage<T>,
+): Promise<boolean> => {
   try {
     const conn = await open
     const channel = await conn.createChannel()
