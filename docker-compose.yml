@@ -1,0 +1,30 @@
+version: "3"
+networks:
+  loan-leads-net:
+    driver: bridge
+services:
+  api:
+    container_name: api
+    environment:
+      AMQP_URL: "${AMQP_URL}"
+    image: praser/loan-leads/api
+    networks:
+      - loan-leads-net
+    ports:
+      - 3000:3000
+    volumes:
+      - "./:/usr/src/"
+  workers:
+    container_name: workers
+    environment:
+      AMQP_URL: "${AMQP_URL}"
+      DB_HOST: "${DB_HOST}"
+      DB_USER: "${DB_USER}"
+      DB_PASS: "${DB_PASS}"
+      DB_NAME: "${DB_NAME}"
+      DB_PORT: "${DB_PORT}"
+    image: praser/loan-leads/workers
+    networks:
+      - loan-leads-net
+    volumes:
+      - "./:/usr/src/"
