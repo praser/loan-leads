@@ -1,3 +1,3 @@
-import dotenv from 'dotenv-safe'
+import { init } from './init'
 
-dotenv.config()
+init()
