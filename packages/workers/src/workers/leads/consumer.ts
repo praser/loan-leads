@@ -1,5 +1,4 @@
-import { EnumMQActions, IMQMessage } from '@loan-leads/utils/'
-import { IConsumer, ILead } from '@loan-leads/core'
+import { EnumMQActions, IMQMessage, IConsumer, ILead } from '@loan-leads/core'
 import { create } from './dao'
 
 export const consumer: IConsumer<ILead> = {

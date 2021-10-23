@@ -1,9 +1,7 @@
 import amqplib, { Channel, ConsumeMessage } from 'amqplib'
-import { EnumMQActions, IMQMessage, IConsumer } from '@loan-leads/core'
+import { IMQMessage, IConsumer } from '@loan-leads/core'
 
 const connect = amqplib.connect(process.env.AMQP_URL || '')
-
-export { EnumMQActions, IMQMessage, IConsumer }
 
 export const parseMessage = <T>(message: ConsumeMessage | null): IMQMessage<T> => {
   if (!message) throw new Error('Invalid message')
