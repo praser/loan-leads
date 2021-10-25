@@ -1,7 +1,7 @@
 import { Router } from 'express'
-import * as hander from '../handers/leads'
+import * as hander from '../handlers/leads'
 
-const router = Router()
+export const router = Router()
 
 router.post('/', hander.create)
 router.put('/:id', hander.update)
