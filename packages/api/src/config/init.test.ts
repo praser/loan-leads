@@ -3,9 +3,11 @@ import { init } from './init'
 
 jest.mock('dotenv-safe')
 
-describe('init', () => {
-  it('is expeted to call dotenv.config()', () => {
-    init()
-    expect(dotenv.config).toBeCalledTimes(1)
+describe('config', () => {
+  describe('init', () => {
+    it('is expeted to call dotenv.config()', () => {
+      init()
+      expect(dotenv.config).toBeCalledTimes(1)
+    })
   })
 })
