@@ -11,7 +11,7 @@ export const create = async (params: ILead): Promise<boolean> => {
     console.log(`The lead ${lead.id} was successfuly creted.`)
     return true
   } catch (err) {
-    console.error(`The lead ${lead.id} was not created.`)
+    // console.error(`The lead ${lead.id} was not created.`)
   }
 
   return false
